@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import locationReducer from '../services/location/reducer'
 import viewportReducer from '../services/viewport/reducer'
+import authReducer from '../services/auth/reducer'
 import { countriesEntityReducer, countriesUiReducer } from '../scenes/home/components/CountriesList/reducers'
 import { accentsEntityReducer, accentsUiReducer } from '../scenes/home/components/AccentsList/reducers'
 import { videosUiReducer } from '../scenes/home/components/VideosList/reducers'
@@ -12,6 +13,7 @@ export const makeRootReducer = () => {
   })
 
   const uiReducer = combineReducers({
+    auth: authReducer,
     location: locationReducer,
     viewport: viewportReducer,
     countries: countriesUiReducer,
